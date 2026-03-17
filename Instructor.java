@@ -19,4 +19,12 @@ public class Instructor extends Person{
         return "Instructor: " + getName() + " ID: " + getId() + " Email: " + getEmail() + " Department: " + department;
     }
 
+    public void setDepartment(String department) {
+        if(department != null && !department.trim().isEmpty()){
+            this.department = department;
+        }
+        else {
+            System.out.println("Invalid department.");
+        }
+    }
 }

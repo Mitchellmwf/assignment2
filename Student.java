@@ -11,10 +11,19 @@ public class Student extends Person {
         this.program = program;
     }
 
+
     //overriding person class info details from subclass student 
     @Override
     public String getDetails() {
         return "Student: " + getName() + " ID: " + getId() + " Email: " + getEmail() + " Program: " + program;
     }
 
+    public void setProgram(String program) {
+        if(program != null && !program.trim().isEmpty()){
+            this.program = program;
+        }
+        else {
+            System.out.println("Invalid program name.");
+        }
+    }
 }

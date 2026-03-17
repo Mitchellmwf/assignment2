@@ -8,9 +8,21 @@ public abstract class Person {
 
     //constructor assigning strings name, id, email 
     public Person(String name, String id, String email){
-        this.name = name;
-        this.id = id;
-        this.email = email;
+        if (name == null || name.trim().isEmpty()) {
+            throw new IllegalArgumentException("Invalid name.");
+        } else {
+            this.name = name;
+        }
+        if (id == null || !id.matches("\\d{1,6}")) {
+            throw new IllegalArgumentException("Invalid ID - Needs to be 6 numbers.");
+        } else {
+            this.id = id;
+        }
+        if (email == null || !email.contains("@") || email.trim().isEmpty()) {
+            throw new IllegalArgumentException("Invalid email.");
+        } else {
+            this.email = email;
+        }
     }
 
     //setter for name that validate if empty and spaces and will send invalid

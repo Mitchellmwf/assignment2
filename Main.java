@@ -15,9 +15,4 @@ public class Main {
     
 }
 // Student class
-class Student {
-    
-    private String name;
-    private String id;
-    private String email;
-    private String program;
+
