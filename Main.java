@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Main {
 
     //s and i are Person references pointing to Student and Instructor objects
