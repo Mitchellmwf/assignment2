@@ -42,3 +42,13 @@ public class StudentManager {
         }
         
         scanner.close();
+    }
+    private static void showMenu() {
+        System.out.println("=== Student Management System ===");
+        System.out.println("1. Add a student");
+        System.out.println("2. Remove student by ID");
+        System.out.println("3. Display all students");
+        System.out.println("4. Search by name or ID");
+        System.out.println("5. Exit");
+        System.out.print("Choose an option (1-5): ");
+    }
