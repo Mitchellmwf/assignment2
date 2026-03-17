@@ -8,4 +8,9 @@ public class Instructor extends Person{
 
     }
 
+    @Override
+    public String getDetails() {
+        return "Instructor: " + getName() + " ID: " + getId() + " Email: " + getEmail() + " Department: " + department;
+    }
+
 }
