@@ -84,3 +84,16 @@ public class StudentManager {
         students.add(new Student(name, id, email, program));
         System.out.println("Student added successfully.");
     }
+
+    private static void removeStudentById() {
+        System.out.print("Enter Student ID to remove: ");
+        String idToRemove = scanner.nextLine().trim();
+
+        boolean removed = students.removeIf(s -> s.getId().equals(idToRemove));
+
+        if (removed) {
+            System.out.println("Student with ID " + idToRemove + " removed.");
+        } else {
+            System.out.println("No student found with that ID.");
+        }
+    }
