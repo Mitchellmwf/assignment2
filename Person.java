@@ -19,7 +19,7 @@ public abstract class Person {
         } else {
             this.id = id;
         }
-        if (email == null || !email.contains("@") || email.trim().isEmpty()) {
+        if (email == null || !email.matches("^[A-Za-z0-9+_.-]+@(.+)$") || email.trim().isEmpty()) {
             throw new IllegalArgumentException("Invalid email.");
         } else {
             this.email = email;
@@ -48,7 +48,7 @@ public abstract class Person {
 
     //setter for email that validate if empty and spaces and needs to contain @ if not will send invalid
     public void setEmail(String email) {
-        if(email != null && email.contains("@") && !email.trim().isEmpty()){
+        if(email != null && email.matches("^[A-Za-z0-9+_.-]+@(.+)$") && !email.trim().isEmpty()){
             this.email = email;
         }
         else {
