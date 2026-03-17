@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 public abstract class Person {
     
-    //Private field of Strings name, id, email
+    //Private field of Strings name, id, email, and static arraylist of usedIDs to track used IDs and prevent duplicates
     private String name;
     private String id;
     private String email;
@@ -19,6 +19,7 @@ public abstract class Person {
         if (id == null || !id.matches("\\D-\\d{4}")) {
             throw new IllegalArgumentException("Invalid ID - Needs to match S-1234.");
         } 
+        //track used IDs to prevent duplicates and throw exception if ID is already in use
         else if (usedIDs.contains(id)) {
             throw new IllegalArgumentException("ID already in use.");
         } 
