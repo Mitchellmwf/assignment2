@@ -9,7 +9,12 @@ public class Instructor extends Person{
     public Instructor(String name, String id, String email, String department){
 
         super(name, id, email);
-        this.department = department;
+        if (department == null || department.trim().isEmpty()) {
+            throw new IllegalArgumentException("Invalid department.");
+        } 
+        else {
+            this.department = department;
+        }
 
     }
 

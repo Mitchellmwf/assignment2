@@ -10,7 +10,11 @@ public class Student extends Person {
     //super constructor 
     public Student(String name, String id, String email, String program) {
         super(name, id, email);
-        this.program = program;
+        if (program == null || program.trim().isEmpty()) {
+            throw new IllegalArgumentException("Invalid program name.");
+        } else {
+            this.program = program;
+        }
     }
 
 
