@@ -7,6 +7,7 @@ public class Student extends Person {
     //super constructor 
     public Student(String name, String id, String email, String program) {
         super(name, id, email);
+        // Validate program input
         if (program == null || program.trim().isEmpty()) {
             throw new IllegalArgumentException("Invalid program name.");
         } else {
@@ -21,6 +22,7 @@ public class Student extends Person {
         return "Student: " + getName() + " ID: " + getId() + " Email: " + getEmail() + " Program: " + program;
     }
 
+    //setter for program with validation
     public void setProgram(String program) {
         if(program != null && !program.trim().isEmpty()){
             this.program = program;

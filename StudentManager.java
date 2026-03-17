@@ -58,7 +58,7 @@ public class StudentManager {
             return -1;
         }
     }
-
+    // adding example students for testing purposes
     private static void addExampleStudents() {
         students.add(new Student("Peter Pan", "123456", "peter@college.ca", "Culinary Arts"));
         students.add(new Student("Emily Rose", "789012", "emily@college.ca", "Biology"));
@@ -79,6 +79,7 @@ public class StudentManager {
         System.out.print("Program: ");
         String program = scanner.nextLine().trim();
 
+        // Validate and add student, catching any exceptions thrown by the constructor
         try {
             students.add(new Student(name, id, email, program));
         }

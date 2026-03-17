@@ -9,6 +9,7 @@ public class Instructor extends Person{
     public Instructor(String name, String id, String email, String department){
 
         super(name, id, email);
+        // Validate department input
         if (department == null || department.trim().isEmpty()) {
             throw new IllegalArgumentException("Invalid department.");
         } 
@@ -24,6 +25,7 @@ public class Instructor extends Person{
         return "Instructor: " + getName() + " ID: " + getId() + " Email: " + getEmail() + " Department: " + department;
     }
 
+    //setter for department with validation
     public void setDepartment(String department) {
         if(department != null && !department.trim().isEmpty()){
             this.department = department;

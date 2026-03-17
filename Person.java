@@ -8,6 +8,7 @@ public abstract class Person {
 
     //constructor assigning strings name, id, email 
     public Person(String name, String id, String email){
+        //validate name, id, and email inputs and throw exceptions if invalid
         if (name == null || name.trim().isEmpty()) {
             throw new IllegalArgumentException("Invalid name.");
         } else {
