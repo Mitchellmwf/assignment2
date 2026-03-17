@@ -10,4 +10,5 @@ public abstract class Person {
         this.email = email;
     }
 
+    public abstract String getDetails();
 }
