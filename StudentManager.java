@@ -29,6 +29,37 @@ public class StudentManager {
                 searchStudents();
             }
             else if (choice == 5) {
+                System.out.print("Enter Student ID to add course: ");
+                String id = scanner.nextLine().trim();
+                for (Student s : students) {
+                    if (s.getId().equals(id)) {
+                        System.out.print("Enter course name to add: ");
+                        String course = scanner.nextLine().trim();
+                        if (course.trim().isEmpty() || course == null) {
+                            System.out.println("Course name can't be empty.");
+                            return;
+                        }
+                        s.addCourse(course);
+                    }
+                }
+            }
+             else if (choice == 6) {
+                System.out.print("Enter Student ID to remove course: ");
+                String id = scanner.nextLine().trim();
+                for (Student s : students) {
+                    if (s.getId().equals(id)) {
+                        s.displayCourses();
+                        System.out.print("Enter course name to remove: ");
+                        String course = scanner.nextLine().trim();
+                        if (course.trim().isEmpty() || course == null) {
+                            System.out.println("Course name can't be empty.");
+                            return;
+                        }
+                        s.removeCourse(course);
+                    }
+                }
+            }
+            else if (choice == 7) {
                 running = false;
                 System.out.println("\nThank you! Goodbye.");
             }
@@ -47,8 +78,10 @@ public class StudentManager {
         System.out.println("2. Remove student by ID");
         System.out.println("3. Display all students");
         System.out.println("4. Search by name or ID");
-        System.out.println("5. Exit");
-        System.out.print("Choose an option (1-5): ");
+        System.out.println("5. Add a course to a student");
+        System.out.print("6. Remove a course from a student");
+        System.out.println("7. Exit");
+        System.out.print("Choose an option (1-7): ");
     }
 
     private static int getChoice() {
@@ -70,7 +103,7 @@ public class StudentManager {
         System.out.print("Name: ");
         String name = scanner.nextLine().trim();
 
-        System.out.print("Student ID: ");
+        System.out.print("Student ID (6 digits): ");
         String id = scanner.nextLine().trim();
 
         System.out.print("Email: ");

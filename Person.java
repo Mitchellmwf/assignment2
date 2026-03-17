@@ -1,4 +1,3 @@
-//created abstract class easier to override from other subclasses
 public abstract class Person {
     
     //Private field of Strings name, id, email
@@ -19,7 +18,7 @@ public abstract class Person {
         } else {
             this.id = id;
         }
-        if (email == null || !email.matches("^[A-Za-z0-9+_.-]+@(.+)$") || email.trim().isEmpty()) {
+        if (email == null || !email.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$") || email.trim().isEmpty()) {
             throw new IllegalArgumentException("Invalid email.");
         } else {
             this.email = email;
