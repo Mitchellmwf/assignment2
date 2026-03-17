@@ -102,4 +102,12 @@ public class StudentManager {
             System.out.println("No students in the system yet.");
             return;
         }
+        System.out.println("\nAll Students:");
+        System.out.println("=".repeat(80));
+        for (Student s : students) {
+            System.out.println(s.getDetails());
+        }
+        System.out.println("=".repeat(80));
+        System.out.println("Total students: " + students.size());
+    }
     }
