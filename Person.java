@@ -1,13 +1,15 @@
+import java.util.ArrayList;
 public abstract class Person {
     
     //Private field of Strings name, id, email
     private String name;
     private String id;
     private String email;
-    //private static ArrayList<String> usedIDs = new ArrayList<>();
+    private static ArrayList<String> usedIDs = new ArrayList<>();
 
     //constructor assigning strings name, id, email 
     public Person(String name, String id, String email){
+        id = id.toUpperCase();
         //validate name, id, and email inputs and throw exceptions if invalid
         if (name == null || name.trim().isEmpty()) {
             throw new IllegalArgumentException("Invalid name.");
@@ -16,8 +18,13 @@ public abstract class Person {
         }
         if (id == null || !id.matches("\\D-\\d{4}")) {
             throw new IllegalArgumentException("Invalid ID - Needs to match S-1234.");
-        } else {
-            this.id = id.toUpperCase();
+        } 
+        else if (usedIDs.contains(id)) {
+            throw new IllegalArgumentException("ID already in use.");
+        } 
+        else {
+            this.id = id;
+            usedIDs.add(id);
         }
         if (email == null || !email.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$") || email.trim().isEmpty()) {
             throw new IllegalArgumentException("Invalid email.");
@@ -40,7 +47,9 @@ public abstract class Person {
     public void setId(String id) {
         id = id.toUpperCase();
         if(id != null && id.matches("\\D-\\d{4}")){
+            usedIDs.remove(this.id);
             this.id = id;
+            usedIDs.add(id);
         }
         else {
             System.out.println("Invalid ID - Needs to be (S-1234).");
