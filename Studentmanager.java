@@ -67,3 +67,20 @@ public class StudentManager {
         students.add(new Student("Victor Hugo", "345678", "victor@college.ca", "Literature"));
         System.out.println("Example students loaded (" + students.size() + " records).");
     }
+ // adding our lovely students
+    private static void addStudent() {
+        System.out.print("Name: ");
+        String name = scanner.nextLine().trim();
+
+        System.out.print("Student ID: ");
+        String id = scanner.nextLine().trim();
+
+        System.out.print("Email: ");
+        String email = scanner.nextLine().trim();
+
+        System.out.print("Program: ");
+        String program = scanner.nextLine().trim();
+
+        students.add(new Student(name, id, email, program));
+        System.out.println("Student added successfully.");
+    }
