@@ -22,7 +22,7 @@ public class Instructor extends Person{
     //overriding person class info details from subclass instructor 
     @Override
     public String getDetails() {
-        return "Instructor: " + getName() + " ID: " + getId() + " Email: " + getEmail() + " Department: " + department;
+        return "Instructor: " + getName() + ", ID: " + getId() + ", Email: " + getEmail() + ", Department: " + department;
     }
 
     //setter for department with validation

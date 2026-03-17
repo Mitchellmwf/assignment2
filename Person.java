@@ -13,8 +13,8 @@ public abstract class Person {
         } else {
             this.name = name;
         }
-        if (id == null || !id.matches("\\d{1,6}")) {
-            throw new IllegalArgumentException("Invalid ID - Needs to be 6 numbers.");
+        if (id == null || !id.matches("\\D-\\d{4}")) {
+            throw new IllegalArgumentException("Invalid ID - Needs to match S-1234.");
         } else {
             this.id = id;
         }
@@ -37,7 +37,7 @@ public abstract class Person {
 
     //setter for ID that validate if empty and 6 nums and will send invalid
     public void setId(String id) {
-        if(id != null && id.matches("\\d{1,6}")){
+        if(id != null && id.matches("\\D-\\d{4}")){
             this.id = id;
         }
         else {

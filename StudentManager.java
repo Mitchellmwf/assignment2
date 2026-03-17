@@ -79,9 +79,9 @@ public class StudentManager {
         System.out.println("3. Display all students");
         System.out.println("4. Search by name or ID");
         System.out.println("5. Add a course to a student");
-        System.out.print("6. Remove a course from a student");
+        System.out.println("6. Remove a course from a student");
         System.out.println("7. Exit");
-        System.out.print("Choose an option (1-7): ");
+        System.out.println("Choose an option (1-7): ");
     }
 
     private static int getChoice() {

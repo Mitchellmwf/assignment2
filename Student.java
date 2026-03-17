@@ -23,7 +23,7 @@ public class Student extends Person {
     //overriding person class info details from subclass student 
     @Override
     public String getDetails() {
-        return "Student: " + getName() + " ID: " + getId() + " Email: " + getEmail() + " Program: " + program + " Courses: " + (courses.isEmpty() ? "None" : String.join(", ", courses));   
+        return "Student: " + getName() + ", ID: " + getId() + ", Email: " + getEmail() + ", Program: " + program + ", Courses: " + (courses.isEmpty() ? "None" : String.join(", ", courses));   
     }
 
     //setter for program with validation
