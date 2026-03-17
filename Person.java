@@ -4,6 +4,7 @@ public abstract class Person {
     private String name;
     private String id;
     private String email;
+    //private static ArrayList<String> usedIDs = new ArrayList<>();
 
     //constructor assigning strings name, id, email 
     public Person(String name, String id, String email){
@@ -42,12 +43,13 @@ public abstract class Person {
             this.id = id;
         }
         else {
-            System.out.println("Invalid ID - Needs to be 6 nums.");
+            System.out.println("Invalid ID - Needs to be (S-1234).");
         }
     }
 
     //setter for email that validate if empty and spaces and needs to contain @ if not will send invalid
     public void setEmail(String email) {
+        email = email.trim().toLowerCase();
         if(email != null && email.matches("^[A-Za-z0-9+_.-]+@(.+)$") && !email.trim().isEmpty()){
             this.email = email;
         }

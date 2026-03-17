@@ -40,9 +40,7 @@ public class StudentManager {
                             return;
                         }
                         s.addCourse(course);
-                        return;
                     }
-                    System.out.println("No student found with that ID.");
                 }
             }
              else if (choice == 6) {

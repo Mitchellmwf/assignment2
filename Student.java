@@ -5,7 +5,7 @@ public class Student extends Person {
     //private field
     //added private string program 
     private String program;
-    private static ArrayList<String> courses = new ArrayList<>();
+    private ArrayList<String> courses = new ArrayList<>();
 
     //super constructor 
     public Student(String name, String id, String email, String program) {
@@ -16,7 +16,7 @@ public class Student extends Person {
         } else {
             this.program = program;
         }
-        courses = new ArrayList<>();
+        this.courses = new ArrayList<>();
     }
 
 
@@ -46,7 +46,7 @@ public class Student extends Person {
             System.out.println("Course already added.");
             return;
         }
-        courses.add(course.toUpperCase());
+        this.courses.add(course.toUpperCase());
         System.out.println("Course added: " + course);
     }
 
@@ -60,17 +60,17 @@ public class Student extends Person {
             System.out.println("Course not found.");
             return;
         }
-        courses.remove(course);
+        this.courses.remove(course);
         System.out.println("Course removed: " + course);
     }
 
     public void displayCourses() {
-        if (courses.isEmpty()) {
+        if (this.courses.isEmpty()) {
             System.out.println("No courses enrolled.");
             return;
         }
         System.out.println("Enrolled courses:");
-        for (String course : courses) {
+        for (String course : this.courses) {
             System.out.println(course);
         }
     }
