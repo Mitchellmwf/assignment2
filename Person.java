@@ -16,7 +16,7 @@ public abstract class Person {
         if (id == null || !id.matches("\\D-\\d{4}")) {
             throw new IllegalArgumentException("Invalid ID - Needs to match S-1234.");
         } else {
-            this.id = id;
+            this.id = id.toUpperCase();
         }
         if (email == null || !email.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$") || email.trim().isEmpty()) {
             throw new IllegalArgumentException("Invalid email.");
@@ -37,6 +37,7 @@ public abstract class Person {
 
     //setter for ID that validate if empty and 6 nums and will send invalid
     public void setId(String id) {
+        id = id.toUpperCase();
         if(id != null && id.matches("\\D-\\d{4}")){
             this.id = id;
         }

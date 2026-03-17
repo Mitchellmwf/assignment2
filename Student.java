@@ -37,21 +37,23 @@ public class Student extends Person {
     }
 
     public void addCourse(String course) {
-        if (course == null || course.trim().isEmpty()) {
-            System.out.println("Invalid course name.");
+        course = course.toUpperCase();
+        if (course == null || course.trim().isEmpty() || !course.matches("\\D{4}\\d{4}")) {
+            System.out.println("Invalid course code.");
             return;
         }
         else if (courses.contains(course)) {
             System.out.println("Course already added.");
             return;
         }
-        courses.add(course);
+        courses.add(course.toUpperCase());
         System.out.println("Course added: " + course);
     }
 
     public void removeCourse(String course) {
+        course = course.toUpperCase();
         if (course == null || course.trim().isEmpty()) {
-            System.out.println("Invalid course name.");
+            System.out.println("Invalid course code.");
             return;
         }
         else if (!courses.contains(course)) {

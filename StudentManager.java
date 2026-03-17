@@ -30,17 +30,19 @@ public class StudentManager {
             }
             else if (choice == 5) {
                 System.out.print("Enter Student ID to add course: ");
-                String id = scanner.nextLine().trim();
+                String id = scanner.nextLine().trim().toUpperCase();
                 for (Student s : students) {
                     if (s.getId().equals(id)) {
-                        System.out.print("Enter course name to add: ");
+                        System.out.print("Enter course code to add (ABCD1234): ");
                         String course = scanner.nextLine().trim();
                         if (course.trim().isEmpty() || course == null) {
                             System.out.println("Course name can't be empty.");
                             return;
                         }
                         s.addCourse(course);
+                        return;
                     }
+                    System.out.println("No student found with that ID.");
                 }
             }
              else if (choice == 6) {
@@ -49,7 +51,7 @@ public class StudentManager {
                 for (Student s : students) {
                     if (s.getId().equals(id)) {
                         s.displayCourses();
-                        System.out.print("Enter course name to remove: ");
+                        System.out.print("Enter course code to remove: ");
                         String course = scanner.nextLine().trim();
                         if (course.trim().isEmpty() || course == null) {
                             System.out.println("Course name can't be empty.");
@@ -93,9 +95,9 @@ public class StudentManager {
     }
     // adding example students for testing purposes
     private static void addExampleStudents() {
-        students.add(new Student("Peter Pan", "123456", "peter@college.ca", "Culinary Arts"));
-        students.add(new Student("Emily Rose", "789012", "emily@college.ca", "Biology"));
-        students.add(new Student("Victor Hugo", "345678", "victor@college.ca", "Literature"));
+        students.add(new Student("Peter Pan", "S-1234", "peter@college.ca", "Culinary Arts"));
+        students.add(new Student("Emily Rose", "x-1021", "emily@college.ca", "Biology"));
+        students.add(new Student("Victor Hugo", "J-1012", "victor@college.ca", "Literature"));
         System.out.println("Example students loaded (" + students.size() + " records).");
     }
  // adding our lovely students
@@ -103,7 +105,7 @@ public class StudentManager {
         System.out.print("Name: ");
         String name = scanner.nextLine().trim();
 
-        System.out.print("Student ID (6 digits): ");
+        System.out.print("Student ID (S-1234): ");
         String id = scanner.nextLine().trim();
 
         System.out.print("Email: ");
@@ -163,7 +165,7 @@ public class StudentManager {
         boolean found = false;
         for (Student s : students) {
             if (s.getName().toLowerCase().contains(searchTerm) ||
-                s.getId().contains(searchTerm)) {
+                s.getId().toLowerCase().contains(searchTerm)) {
                 System.out.println(s.getDetails());
                 found = true;
             }
