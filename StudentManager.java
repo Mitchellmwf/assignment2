@@ -79,13 +79,23 @@ public class StudentManager {
         System.out.print("Program: ");
         String program = scanner.nextLine().trim();
 
-        students.add(new Student(name, id, email, program));
+        try {
+            students.add(new Student(name, id, email, program));
+        }
+        catch (IllegalArgumentException e) {
+            System.out.println("Error adding student: " + e.getMessage());
+            return;
+        }
         System.out.println("Student added successfully.");
     }
 
     private static void removeStudentById() {
         System.out.print("Enter Student ID to remove: ");
         String idToRemove = scanner.nextLine().trim();
+        if (idToRemove.isEmpty()) {
+            System.out.println("ID can't be empty.");
+            return;
+        }
 
         boolean removed = students.removeIf(s -> s.getId().equals(idToRemove));
 
