@@ -113,6 +113,7 @@ public class StudentManager {
             System.out.println("Student with ID " + idToRemove + " removed.");
         } else {
             System.out.println("No student found with that ID.");
+            }
         }
         // displaying all students
         private static void displayAllStudents() {
