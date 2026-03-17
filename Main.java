@@ -24,8 +24,8 @@ class Student {
 
     // Constructor
     public Student(String name, String id, String email, String program) {
-        this.name = name();
-        this.id = id();
-        this.email = email();
-        this.program = program();
+        this.name = name;
+        this.id = id;
+        this.email = email;
+        this.program = program;
     }
