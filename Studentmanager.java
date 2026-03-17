@@ -110,4 +110,25 @@ public class StudentManager {
         System.out.println("=".repeat(80));
         System.out.println("Total students: " + students.size());
     }
+    private static void searchStudents() {
+        System.out.print("Enter name or ID (partial match ok): ");
+        String searchTerm = scanner.nextLine().trim().toLowerCase();
+
+        System.out.println("\nSearch Results:");
+        System.out.println("-".repeat(60));
+
+        boolean found = false;
+        for (Student s : students) {
+            if (s.getName().toLowerCase().contains(searchTerm) ||
+                s.getId().contains(searchTerm)) {
+                System.out.println(s.getDetails());
+                found = true;
+            }
+        }
+
+        if (!found) {
+            System.out.println("No students match your search.");
+        }
+        System.out.println();
     }
+}
