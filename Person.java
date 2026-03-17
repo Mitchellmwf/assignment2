@@ -19,7 +19,7 @@ public abstract class Person {
         }
     }
 
-    public void setID(String id) {
+    public void setId(String id) {
         if(id != null && id.matches("\\d{1,6}")){
             this.id = id;
         }

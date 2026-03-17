@@ -7,4 +7,9 @@ public class Student extends Person {
         this.program = program;
     }
 
+    @Override
+    public String getDetails() {
+        return "Student: " + getName() + " ID: " + getId() + " Email: " + getEmail() + " Program: " + program;
+    }
+
 }
