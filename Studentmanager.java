@@ -96,4 +96,10 @@ public class StudentManager {
         } else {
             System.out.println("No student found with that ID.");
         }
+        // displaying all students
+        private static void displayAllStudents() {
+        if (students.isEmpty()) {
+            System.out.println("No students in the system yet.");
+            return;
+        }
     }
