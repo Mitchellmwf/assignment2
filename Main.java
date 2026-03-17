@@ -21,3 +21,11 @@ class Student {
     private String id;
     private String email;
     private String program;
+
+    // Constructor
+    public Student(String name, String id, String email, String program) {
+        this.name = name();
+        this.id = id();
+        this.email = email();
+        this.program = program();
+    }
